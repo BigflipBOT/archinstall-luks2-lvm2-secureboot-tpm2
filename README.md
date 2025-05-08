@@ -657,6 +657,15 @@ Here we specify `token-id` as `1` based on the previous output of `luksDump`. Sp
 
 Now repeat the steps from [TPM enrollment](https://github.com/joelmathewthomas/archinstall-luks2-lvm2-secureboot-tpm2?tab=readme-ov-file#16-enrolling-the-tpm) to renroll to the TPM.
 
+To enable multilib inpud following command
+```
+$ sudo sed -i '/^\[multilib\]/,/^$/{s/^#//}' /etc/pacman.conf
+```
+and refresh mirrolist
+```
+sudo pacman -Sy
+```
+
 
 With this, the guide has mostly covered on how to install Arch Linux, Encrypt disk with LUKS2 , use logical volumes with LVM2, how to setup Secure Boot, and how to enroll the TPM.
 
